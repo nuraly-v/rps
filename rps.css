@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    font-family: Orbitron;
+    padding: 0;
+    margin: 0;
+    color: var(--seasalt);
+    box-sizing: border-box;
+    user-select: none;
+}
+
+:root {
+    /* CSS HEX */
+    --seasalt: #f8f9faff;
+    --antiflash-white: #e9ecefff;
+    --platinum: #dee2e6ff;
+    --french-gray: #ced4daff;
+    --french-gray-2: #adb5bdff;
+    --slate-gray: #6c757dff;
+    --outer-space: #495057ff;
+    --onyx: #343a40ff;
+    --eerie-black: #212529ff;
+}
+
+.main-content {
+    height: 100vh;
+    background-color: var(--eerie-black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+
+/* Start: Logo */
+.rps-logo {
+    display: flex;
+    align-items: flex-end;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.rps-logo h1 {
+    font-size: 2.5rem;
+}
+
+.rps-logo .logo-under {
+    color: var(--slate-gray);
+}
+
+.rps-logo:hover .logo-under::after {
+    transition: 0.3s;
+    cursor: pointer;
+    content: "_for_blood";
+    color: rgb(255, 0, 0);
+    background-color: var(--antiflash-white);
+}
+
+/* End: Logo */
+
+/* Start: RPS-options */
+.opponents-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+}
+
+.rps-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70vh;
+}
+
+.option {
+    border: 0.1rem solid var(--onyx);
+}
+
+.option {
+    padding: 1.2rem;
+    border-radius: 1rem;
+    background-color: var(--onyx);
+    border: 0.1rem solid var(--outer-space);
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
+.option .option-icons {
+    font-size: 3.2rem;
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+.option:hover {
+    transition: 0.4s;
+    box-shadow: 0px 0px 20px var(--outer-space);
+}
+
+.option:active {
+    background-color: var(--slate-gray);
+}
+
+.option:active .option-icons {
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateX(15rem) scale(3);
+}
+
+#rps-right:active .option-icons {
+    transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: translateX(-15rem) scale(3);
+}
+
+
+/* End: RPS-options */
+
+/* Start: Fight */
+.fight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.fight div {
+    background-color: var(--onyx);
+    padding: 3rem;
+    border-radius: 1rem;
+    border: 0.1rem solid var(--french-gray-2);
+}
+
+.fighter-choice-computer, .fighter-choice-user {
+    font-size: 6rem;
+}
+
+.fight .vs-icon {
+    width: 5rem;
+    filter: invert();
+}
+
+.fight-user, .fight-computer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: red;
+
+}
+
+.real-fight-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 55vh;
+}
+
+
+/* End: Fight */
+
+/* Start: Stats */
+
+.stats {
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    position: fixed;
+    bottom: 5%; 
+    left: 20%;
+    right: 20%;
+    height: 10vh;
+    backdrop-filter: blur(1rem);
+    border-radius: 1rem;
+    border: 0.1rem solid var(--onyx);
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding-left: 1rem;
+}
+
+.stats-copy {
+    z-index: 9;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    position: fixed;
+    bottom: 5%;
+    left: 20%;
+    right: 20%;
+    height: 10vh;
+    border-radius: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+
+.wins-c, .losses-c, .ties-c {
+    border-radius: inherit;
+    padding: 0.7rem;
+    width: 25%;
+}
+
+.wins-c {
+    background-color: green;
+}
+
+.losses-c {
+    background-color: red;
+}
+
+.ties-c {
+    background-color: orange;
+}
+
+/* End: Stats */

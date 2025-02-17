@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://img.icons8.com/?size=512w&id=kNjnT5dc8Zc7&format=png" type="image/x-icon">
+    <link rel="stylesheet" href="rps.css">
+    <title>RPS - for real</title>
+</head>
+<body>
+    <main class="main-content">
+        <div class="rps-logo">
+            <h1>RPS</h1>
+            <p class="logo-under">_for_real</p>
+        </div>
+        <p id="destit">Start Playing!</p>
+        <div class="opponents-main">
+            <div class="rps-options">
+                <button class="option" onclick="Rock()">
+                    <p class="option-icons">🪨</p>
+                    <p>Rock</p>
+                </button>
+                <button class="option" onclick="Paper()">
+                    <p class="option-icons">📃</p>
+                    <p>Paper</p>
+                </button>
+                <button class="option" onclick="Scissors()">
+                    <p class="option-icons">✂️</p>
+                    <p>Scissors</p>
+                </button>
+            </div>
+            <div class="real-fight-middle">
+                <div class="fight">
+                    <div class="fight-user">
+                        <h3>User</h3>
+                        <p class="fighter-choice-user" id="fcu">🔰</p>
+                    </div>
+                    <div id="vs-icon-middle"><img src="https://cdn-icons-png.flaticon.com/512/7960/7960343.png" alt="" class="vs-icon"></div>
+                    <div class="fight-computer">
+                        <h3>Computer</h3>
+                        <p class="fighter-choice-computer" id="fcc">🔴</p>
+                    </div>
+                </div> 
+                <button class="option" id="reset" onclick="resetScores()">Reset</button>
+            </div>
+            <div class="rps-options">
+                <button class="option" id="rps-right" onclick="Rock()">
+                    <p class="option-icons">🪨</p>
+                    <p>Rock</p>
+                </button>
+                <button class="option" id="rps-right" onclick="Paper()">
+                    <p class="option-icons">📃</p>
+                    <p>Paper</p>
+                </button>
+                <button class="option" id="rps-right" onclick="Scissors()">
+                    <p class="option-icons">✂️</p>
+                    <p>Scissors</p>
+                </button>
+            </div>
+        </>
+        <nav class="stats">
+            <div class="losses" id="losses">Losses</div>
+            <div class="wins" id="wins">Wins</div>
+            <div class="ties" id="ties">Ties</div>
+        </nav>
+        <nav class="stats-copy">
+            <div class="losses-c"></div>
+            <div class="wins-c"></div>
+            <div class="ties-c"></div>
+        </nav>
+    </main>
+    <script src="rps.js"></script>
+</body>
+</html>
