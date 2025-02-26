@@ -16,15 +16,15 @@
         <p id="destit">Start Playing!</p>
         <div class="opponents-main">
             <div class="rps-options">
-                <button class="option" onclick="Rock()">
+                <button class="option" id="rock"">
                     <p class="option-icons">🪨</p>
                     <p>Rock</p>
                 </button>
-                <button class="option" onclick="Paper()">
+                <button class="option" id="paper">
                     <p class="option-icons">📃</p>
                     <p>Paper</p>
                 </button>
-                <button class="option" onclick="Scissors()">
+                <button class="option" id="scissors">
                     <p class="option-icons">✂️</p>
                     <p>Scissors</p>
                 </button>
@@ -42,20 +42,20 @@
                     </div>
                 </div>
                 <div class="res-auto">
-                    <button class="option" id="reset" onclick="resetScores()">Reset</button>
-                    <button class="option" id="reset" onclick="autoPlay()">AutoPlay</button>
+                    <button class="option" id="reset">Reset</button>
+                    <button class="option" id="autoplay">AutoPlay</button>
                 </div>
             </div>
             <div class="rps-options">
-                <button class="option" id="rps-right" onclick="Rock()">
+                <button class="option" id="rps-right">
                     <p class="option-icons">🪨</p>
                     <p>Rock</p>
                 </button>
-                <button class="option" id="rps-right" onclick="Paper()">
+                <button class="option" id="rps-right">
                     <p class="option-icons">📃</p>
                     <p>Paper</p>
                 </button>
-                <button class="option" id="rps-right" onclick="Scissors()">
+                <button class="option" id="rps-right">
                     <p class="option-icons">✂️</p>
                     <p>Scissors</p>
                 </button>
@@ -71,6 +71,8 @@
             <div class="wins-c"></div>
             <div class="ties-c"></div>
         </nav>
+        <div id="reset-confirm" class="reset-confirm">
+        </div>
     </main>
     <script src="rps.js"></script>
 </body>

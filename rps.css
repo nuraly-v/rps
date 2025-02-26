@@ -221,3 +221,48 @@
     align-items: center;
     justify-content: space-around;
 }
+
+.reset-confirm {
+    position: fixed;
+    left:30%;
+    right: 30%;
+    bottom: 17%;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.confirm-but {
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: 0.1rem solid green;
+    transition: 0.3s;
+}
+
+.confirm-but:hover {
+    box-shadow: 0 0 3rem rgba(0, 255, 42, 0.4);
+}
+
+.confirm-but:active {
+    transition: 0s;
+    background-color: rgba(0, 255, 42, 0.4);
+    box-shadow: none;
+}
+
+.no-but {
+    border: 0.1rem solid red;
+}
+
+.no-but:hover {
+    box-shadow: 0 0 3rem rgba(255, 0, 0, 0.678);
+}
+
+.no-but:active {
+    transition: 0s;
+    background-color: rgba(255, 0, 0, 0.678);
+    box-shadow: none;
+}

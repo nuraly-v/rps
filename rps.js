@@ -58,12 +58,33 @@ function keepScores(score, user_choice, computer_choice) {
     localStorage.setItem('scores', JSON.stringify(scores));
 }
 
+let clicked_state = true;
 function resetScores() {
-    scores.losses = 0;
-    scores.wins = 0;
-    scores.ties = 0;
-    localStorage.removeItem('scores');
-    trackScores();
+    let popup = document.getElementById('reset-confirm');
+
+    if (clicked_state) {
+        popup.innerHTML = `
+        <p>Are you sure you want to reset the score?</p>
+        <div class="reset-confirm-buttons">
+            <button class="confirm-but yes-but">Yes</button>
+            <button class="confirm-but no-but">No</button>
+        </div>`;
+        clicked_state = false;
+
+        document.querySelector('.yes-but').addEventListener('click', () => {
+            scores.losses = 0;
+            scores.wins = 0;
+            scores.ties = 0;
+            localStorage.removeItem('scores');
+            trackScores();
+            popup.innerText = '';
+        });
+
+        document.querySelector('.no-but').addEventListener('click', () => {
+            popup.innerText = '';
+        });
+        clicked_state = true;
+    }
 }
 
 function trackScores() {
@@ -135,7 +156,9 @@ let refreshInterval;
 let play = false;
 
 function autoPlay() {
+    let autoPlayInnerText = document.getElementById('autoplay');
     if (!play) {
+        autoPlayInnerText.innerText = 'Stop Playing';
         // Start interval
         refreshInterval = setInterval(function () {
             const RanNum = Math.random();
@@ -150,8 +173,45 @@ function autoPlay() {
 
         play = true;
     } else {
+        autoPlayInnerText.innerText = 'AutoPlay';
         // Stop interval
         clearInterval(refreshInterval);
         play = false;
     }
 }
+
+/* Main Runtime */
+document.getElementById('reset').addEventListener('click', () => {
+    resetScores();
+});
+
+document.getElementById('autoplay').addEventListener('click', () => {
+    autoPlay();
+});
+
+document.getElementById('rock').addEventListener('click', () => {
+    Rock();
+});
+
+document.getElementById('paper').addEventListener('click', () => {
+    Paper();
+});
+
+document.getElementById('scissors').addEventListener('click', () => {
+    Scissors();
+});
+
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === 'r') {
+        // document.getElementById('rock').click();
+        Rock();
+    } else if (event.key === 'p') {
+        Paper();
+    } else if (event.key === 's') {
+        Scissors();
+    } else if (event.key === 'q') {
+        resetScores();
+    } else if (event.key === 'a') {
+        autoPlay();
+    };
+})
